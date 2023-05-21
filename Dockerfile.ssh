@@ -1,0 +1,15 @@
+FROM ubuntu:latest
+
+RUN apt-get update
+RUN apt-get -y install bash python3 python3-pip
+
+COPY post_build.sh /post_build.sh
+COPY include.pkg /include.pkg
+COPY user.dat /user.dat
+COPY include.pip3.pkg ssh_key_busydocker.pu[b] /
+
+RUN chmod +x /post_build.sh
+RUN ./post_build.sh -v
+
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]
