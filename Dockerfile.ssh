@@ -12,4 +12,6 @@ RUN chmod +x /post_build.sh
 RUN ./post_build.sh -v
 
 EXPOSE 22
+ENV QT_X11_NO_MITSHM=1
+
 CMD ["/usr/sbin/sshd", "-D"]
