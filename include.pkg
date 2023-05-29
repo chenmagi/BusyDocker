@@ -11,3 +11,4 @@ zenity
 git
 python3-tk
 bash
+python3.10-venv
